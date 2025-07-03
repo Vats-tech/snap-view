@@ -36,7 +36,7 @@ const Icons = ({ id, classes, iconSize = "small" }: iconsType) => {
       fill="currentColor"
       viewBox="0 0 16 16"
     >
-      <use href={`/src/assets/icons.svg#${id}`}></use>
+      <use href={`/icons.svg#${id}`}></use>
     </svg>
   );
 };
