@@ -1,69 +1,83 @@
-# React + TypeScript + Vite
+# SnapView
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern React + TypeScript application for viewing user stories, inspired by Instagram/Snapchat. Users can view, navigate, and auto-play stories with smooth progress bars and a responsive UI.
 
-Currently, two official plugins are available:
+## 🚀 Deployment
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Live Demo: [https://snap-view.vercel.app/](https://snap-view.vercel.app/)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🛠️ Setup & Running Locally
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+1. **Clone the repository:**
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+   ```sh
+   git clone https://github.com/your-username/snap-view.git
+   cd snap-view
+   ```
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+2. **Install dependencies:**
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+   ```sh
+   npm install
+   ```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+3. **Start the development server:**
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+   ```sh
+   npm run dev
+   ```
+
+   Visit [http://localhost:5173](http://localhost:5173) in your browser.
+
+4. **Run unit tests:**
+
+   ```sh
+   npm run test
+   ```
+
+5. **Run end-to-end (Cypress) tests:**
+   ```sh
+   npm run cypress:open
+   ```
+   _(Or use `npm run cy:run` for headless mode)_
+
+---
+
+## 🧩 Design Choices
+
+### Performance
+
+- **Virtualized Story List:** The story list is lightweight and only renders visible avatars, ensuring fast initial load even with many users.
+- **Optimized Image Loading:** Story images only trigger progress bars after fully loading, preventing premature progress and improving perceived performance.
+- **Minimal Re-renders:** State is scoped to only what changes (current story index, progress, image loaded), reducing unnecessary component updates.
+
+### Scalability
+
+- **Component Modularity:** Each UI piece (StoryList, StoryViewer, ProgressBar, Profile, Icons) is isolated, making it easy to extend or swap implementations.
+- **TypeScript Types:** All user and story data is strictly typed, preventing runtime errors as the app grows.
+- **Test Coverage:** Comprehensive unit and E2E tests ensure reliability as features are added.
+
+### Accessibility & UX
+
+- **Keyboard Navigation:** Story viewer is accessible via keyboard and screen readers.
+- **Responsive Design:** Works seamlessly on desktop and mobile screens.
+- **Smooth Transitions:** Progress bars and story transitions are animated for a modern feel.
+
+---
+
+## 📁 Project Structure
+
+- `src/components/` – UI components (StoryList, StoryViewer, ProgressBar, etc.)
+- `src/types/` – TypeScript types for users and stories
+- `src/utils/dummy-data/` – Sample user/story data
+- `cypress/` – E2E tests and fixtures
+
+---
+
+## 📋 License
+
+---
+
+\*Feel free to open
