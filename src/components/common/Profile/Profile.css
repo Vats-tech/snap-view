@@ -4,9 +4,15 @@
   align-items: center;
   justify-content: center;
   gap: 12px;
-  left: 2rem;
+  left: 1rem;
   top: 2rem;
   z-index: 1000;
+}
+
+@media (max-width: 768px) {
+  .profile-container {
+    top: 4rem;
+  }
 }
 
 .profile-circle {

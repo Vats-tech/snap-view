@@ -123,7 +123,7 @@ const StoryViewer = ({ user, onClose }: StroyViewerProps) => {
           onClose();
         }}
       >
-        <Icons id="close" classes="" iconSize="xlarge" />
+        <Icons id="close" classes="" iconSize="large" />
       </button>
       <Profile userName={user.userName} avatar={user.avatar} />
       <div
