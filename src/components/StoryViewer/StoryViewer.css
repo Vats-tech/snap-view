@@ -6,7 +6,7 @@
   background: rgba(18, 18, 22, 0.99);
   width: 100vw;
   height: 100vh;
-  z-index: 9999;
+  z-index: 999;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -16,15 +16,21 @@
 .story-viewer__close-button {
   position: absolute;
   top: 2rem;
-  right: 2rem;
+  right: 1rem;
   color: white;
   font-size: 1.5rem;
   background: none;
   border: none;
-  z-index: 100;
+  z-index: 1000;
   cursor: pointer;
   padding: 4px;
   display: flex;
+}
+
+@media (max-width: 768px) {
+  .story-viewer__close-button {
+    top: 4rem;
+  }
 }
 
 .story-viewer__stroy-content {
@@ -50,11 +56,18 @@
 
 .story-viewer__progress-bars {
   position: absolute;
-  top: 0.5rem;
+  top: 1rem;
   left: 50%;
   right: 1rem;
   display: flex;
   gap: 6px;
   width: 340px;
+  z-index: 1000;
   transform: translateX(-50%);
+}
+
+@media (max-width: 768px) {
+  .story-viewer__progress-bars {
+    top: 3rem;
+  }
 }
