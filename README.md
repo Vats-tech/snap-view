@@ -13,7 +13,7 @@ Live Demo: [https://snap-view.vercel.app/](https://snap-view.vercel.app/)
 1. **Clone the repository:**
 
    ```sh
-   git clone https://github.com/your-username/snap-view.git
+   git clone https://github.com/Vats-tech/snap-view.git
    cd snap-view
    ```
 
